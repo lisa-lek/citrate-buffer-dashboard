@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citrate Buffer Demand Dashboard - Pharmaceutical Manufacturing</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Citrate Buffer Demand Dashboard</h1>
+            <p class="subtitle">Pharmaceutical Manufacturing Market Analysis</p>
+        </header>
+
+        <nav class="tab-navigation">
+            <button class="tab-button active" onclick="showTab('revenue')">Revenue Estimates</button>
+            <button class="tab-button" onclick="showTab('growth')">Pockets of Growth</button>
+            <button class="tab-button" onclick="showTab('headwinds')">Major Headwinds</button>
+        </nav>
+
+        <!-- Revenue Estimates Tab -->
+        <div id="revenue" class="tab-content active">
+            <div class="tab-header">
+                <h2>Revenue Estimates & Market Projections</h2>
+                <p>High-level revenue estimates for citrate buffer demand in pharmaceutical manufacturing</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>Current Market Size (2024)</h3>
+                    <div class="metric-value">$847M</div>
+                    <div class="metric-description">Global citrate buffer market</div>
+                </div>
+                <div class="metric-card">
+                    <h3>High Growth Scenario (2030)</h3>
+                    <div class="metric-value high">$1.42B</div>
+                    <div class="metric-description">CAGR: 9.2%</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Low Growth Scenario (2030)</h3>
+                    <div class="metric-value low">$1.18B</div>
+                    <div class="metric-description">CAGR: 5.8%</div>
+                </div>
+                <div class="metric-card">
+                    <h3>Base Case (2030)</h3>
+                    <div class="metric-value base">$1.28B</div>
+                    <div class="metric-description">CAGR: 7.3%</div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+
+            <div class="scenario-details">
+                <div class="scenario-card">
+                    <h3>High Growth Drivers</h3>
+                    <ul>
+                        <li>Accelerated biopharmaceutical pipeline development</li>
+                        <li>Increased demand for monoclonal antibodies</li>
+                        <li>Growth in cell and gene therapies</li>
+                        <li>Expansion of biosimilar market</li>
+                        <li>Emerging markets growth</li>
+                    </ul>
+                </div>
+                <div class="scenario-card">
+                    <h3>Low Growth Factors</h3>
+                    <ul>
+                        <li>Regulatory delays in drug approvals</li>
+                        <li>Economic downturn impact</li>
+                        <li>Supply chain disruptions</li>
+                        <li>Pricing pressure from payers</li>
+                        <li>Patent cliff effects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pockets of Growth Tab -->
+        <div id="growth" class="tab-content">
+            <div class="tab-header">
+                <h2>Pockets of Growth</h2>
+                <p>Expected pipeline assets driving citrate buffer demand</p>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h3>Bispecific Antibodies Pipeline</h3>
+                    <canvas id="bispecificsChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Radiopharmaceuticals Pipeline</h3>
+                    <canvas id="radiopharmaChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Cell Therapies Pipeline</h3>
+                    <canvas id="cellTherapiesChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <h3>Antibody-Drug Conjugates (ADCs) Pipeline</h3>
+                    <canvas id="adcsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="pipeline-summary">
+                <h3>Pipeline Summary</h3>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <span class="summary-label">Total Pipeline Assets:</span>
+                        <span class="summary-value">2,847</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Phase III Assets:</span>
+                        <span class="summary-value">312</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Expected Approvals (2024-2026):</span>
+                        <span class="summary-value">89</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Estimated Buffer Demand Increase:</span>
+                        <span class="summary-value">+23%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Major Headwinds Tab -->
+        <div id="headwinds" class="tab-content">
+            <div class="tab-header">
+                <h2>Major Headwinds</h2>
+                <p>Key challenges and regulatory developments affecting the market</p>
+            </div>
+
+            <div class="headwinds-grid">
+                <div class="headwind-card">
+                    <h3>mRNA Development Status</h3>
+                    <div class="news-item">
+                        <h4>HHS mRNA Initiative Update</h4>
+                        <p class="date">August 2024</p>
+                        <p>The Department of Health and Human Services (HHS) announced a $5 billion investment in mRNA vaccine manufacturing infrastructure, potentially reducing demand for traditional buffer systems in favor of lipid nanoparticle formulations.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>FDA mRNA Guidance</h4>
+                        <p class="date">July 2024</p>
+                        <p>New FDA guidance on mRNA manufacturing quality standards may shift industry focus away from traditional buffer systems, impacting citrate buffer demand in vaccine manufacturing.</p>
+                    </div>
+                </div>
+
+                <div class="headwind-card">
+                    <h3>Pricing & Reimbursement</h3>
+                    <div class="news-item">
+                        <h4>Most Favored Nation Pricing</h4>
+                        <p class="date">June 2024</p>
+                        <p>Trump's proposed Most Favored Nation pricing model for Medicare Part B drugs could significantly impact pharmaceutical manufacturing economics, potentially reducing buffer demand through cost-cutting measures.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>Inflation Reduction Act Impact</h4>
+                        <p class="date">May 2024</p>
+                        <p>Medicare drug price negotiation provisions under the Inflation Reduction Act may pressure manufacturers to optimize buffer usage and reduce costs.</p>
+                    </div>
+                </div>
+
+                <div class="headwind-card">
+                    <h3>Regulatory Challenges</h3>
+                    <div class="news-item">
+                        <h4>FDA Buffer Standards Update</h4>
+                        <p class="date">April 2024</p>
+                        <p>Updated FDA guidance on buffer system validation may require additional testing and documentation, increasing manufacturing costs and complexity.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>EMA Buffer Requirements</h4>
+                        <p class="date">March 2024</p>
+                        <p>European Medicines Agency (EMA) new requirements for buffer system traceability may impact citrate buffer supply chain and demand patterns.</p>
+                    </div>
+                </div>
+
+                <div class="headwind-card">
+                    <h3>Supply Chain & Manufacturing</h3>
+                    <div class="news-item">
+                        <h4>Raw Material Shortages</h4>
+                        <p class="date">February 2024</p>
+                        <p>Continued shortages in citric acid and related raw materials may impact buffer availability and pricing, affecting manufacturing decisions.</p>
+                    </div>
+                    <div class="news-item">
+                        <h4>Manufacturing Consolidation</h4>
+                        <p class="date">January 2024</p>
+                        <p>Industry consolidation in pharmaceutical manufacturing may lead to standardized buffer systems, potentially reducing citrate buffer demand in favor of alternative formulations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="risk-assessment">
+                <h3>Risk Assessment Summary</h3>
+                <div class="risk-grid">
+                    <div class="risk-item high">
+                        <span class="risk-label">High Risk:</span>
+                        <span class="risk-value">mRNA shift, pricing pressure</span>
+                    </div>
+                    <div class="risk-item medium">
+                        <span class="risk-label">Medium Risk:</span>
+                        <span class="risk-value">Regulatory changes, supply chain</span>
+                    </div>
+                    <div class="risk-item low">
+                        <span class="risk-label">Low Risk:</span>
+                        <span class="risk-value">Manufacturing consolidation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
